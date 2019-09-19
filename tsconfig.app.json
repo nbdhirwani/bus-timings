@@ -6,11 +6,14 @@
   },
   "files": [
     "src/main.ts",
-    "src/polyfills.ts"
+    "src/polyfills.ts",
+    "json-typings.d.ts"
   ],
   "include": [
     "src/**/*.ts"
   ],
+  "resolveJsonModule": true,
+  "esModuleInterop": true,
   "exclude": [
     "src/test.ts",
     "src/**/*.spec.ts"

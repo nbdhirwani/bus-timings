@@ -1,1 +1,28 @@
-<p>organisation-report works!</p>
+<div *ngIf="busTimings.data" style="text-align:left;width:500px;">
+    <div *ngFor="let organisationReport of busTimings.data">
+        <h1>{{organisationReport.organisation}} - {{organisationReport.date}}</h1>
+
+        <table *ngIf="organisationReport.busData">
+            <tr>
+                <th>Bus ID</th>
+                <th>Route Variant</th>
+                <th>Status</th>
+            </tr>
+
+            <tr *ngFor="let busData of organisationReport.busData">
+                <td>{{busData.busId}}</td>
+                <td>{{busData.routeVariant}}</td>
+                <td *ngIf="busData.deviationFromTimetable < 0; else late" style="color: blue">Early</td>
+                <ng-template #late>
+                    <td *ngIf="busData.deviationFromTimetable > 300; else ontime" style="color: red">Late</td>
+                </ng-template>
+                <ng-template #ontime>
+                    <td *ngIf="busData.deviationFromTimetable; else unknown" style="color: green">On Time</td>
+                </ng-template>
+                <ng-template #unknown>
+                    <td style="color: blueviolet">Unknown</td>
+                </ng-template>
+            </tr>
+        </table>
+    </div>
+</div>

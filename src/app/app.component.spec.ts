@@ -1,6 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { OrganisationReportComponent } from './organisation-report/organisation-report.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -9,7 +10,7 @@ describe('AppComponent', () => {
         RouterTestingModule
       ],
       declarations: [
-        AppComponent
+        AppComponent, OrganisationReportComponent
       ],
     }).compileComponents();
   }));
@@ -20,7 +21,7 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'bus-timings'`, () => {
+  it(`should have as title 'Bus Reports'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('Bus Reports');
