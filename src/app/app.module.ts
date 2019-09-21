@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { OrganisationReportComponent } from './organisation-report/organisation-report.component';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NotesComponent } from './notes/notes.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    OrganisationReportComponent
+    OrganisationReportComponent,
+    NotesComponent
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { OrganisationReportComponent } from './organisation-report.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { NotesComponent } from '../notes/notes.component'
 
 describe('OrganisationReportComponent', () => {
   let component: OrganisationReportComponent;
@@ -14,7 +15,7 @@ describe('OrganisationReportComponent', () => {
         MatExpansionModule,
         BrowserAnimationsModule
       ],
-      declarations: [ OrganisationReportComponent ]
+      declarations: [ OrganisationReportComponent, NotesComponent ]
     })
     .compileComponents();
   }));

@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { OrganisationReportComponent } from './organisation-report/organisation-report.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { NotesComponent } from './notes/notes.component'
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -14,7 +15,7 @@ describe('AppComponent', () => {
         BrowserAnimationsModule
       ],
       declarations: [
-        AppComponent, OrganisationReportComponent
+        AppComponent, OrganisationReportComponent, NotesComponent
       ],
     }).compileComponents();
   }));
