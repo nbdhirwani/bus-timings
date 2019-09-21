@@ -30,3 +30,7 @@ tr:hover {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     font-size: 1.3em
 }
+
+.route-number {
+    font-weight: bold
+}

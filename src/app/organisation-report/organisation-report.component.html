@@ -9,8 +9,18 @@
             </tr>
 
             <tr *ngFor="let busData of organisationReport.busData">
+                
                 <td>{{busData.busId}}</td>
-                <td>{{busData.routeVariant}}</td>
+                
+                <td>
+                    <span *ngIf="busData.routeVariant.toLowerCase() !== 'unknown'; else noformat">
+                        <span class="route-number">{{busData.routeVariant.substr(0,3)}}</span>{{busData.routeVariant.substr(3)}}
+                    </span>
+                    <ng-template #noformat>
+                            {{busData.routeVariant}}
+                    </ng-template>
+                </td>
+                
                 <td *ngIf="busData.deviationFromTimetable < 0; else late" style="color: blue">Early</td>
                 <ng-template #late>
                     <td *ngIf="busData.deviationFromTimetable > 300; else ontime" style="color: red">Late</td>
@@ -21,6 +31,7 @@
                 <ng-template #unknown>
                     <td style="color: blueviolet">Unknown</td>
                 </ng-template>
+
             </tr>
         </table>
     </mat-expansion-panel>
