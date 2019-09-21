@@ -1,7 +1,6 @@
 <div *ngIf="busTimings.data" style="text-align:left;width:500px;">
-    <div *ngFor="let organisationReport of busTimings.data">
-        <h1>{{organisationReport.organisation}} - {{organisationReport.date}}</h1>
-
+    <mat-expansion-panel *ngFor="let organisationReport of busTimings.data">
+        <mat-expansion-panel-header class="header">{{organisationReport.organisation}} - {{organisationReport.date}}</mat-expansion-panel-header>
         <table *ngIf="organisationReport.busData">
             <tr>
                 <th>Bus ID</th>
@@ -24,5 +23,5 @@
                 </ng-template>
             </tr>
         </table>
-    </div>
+    </mat-expansion-panel>
 </div>

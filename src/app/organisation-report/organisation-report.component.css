@@ -1,10 +1,32 @@
-table, th, td 
-{
-    margin: 10px 0;
-    border: solid 1px #333;
-    padding: 2px 4px;
-    font: 15px Verdana;
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
 }
+
 th {
-    font-weight:bold;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(76, 91, 175);
+    color: white;
+}
+
+td, th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+.header {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    font-size: 1.3em
 }
