@@ -1,4 +1,4 @@
-# BusTimings
+# Bus Reports
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
 
@@ -6,9 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Optionally you can run `ng serve --open` to start the servere and automatically open the `http:localhost:4200` in the default browser.
 
 ## Build
 
@@ -22,6 +20,15 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Assumptions
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+In addition to the requirements described, I have made following assumptions
+
+1. First three letters of route variant are bus route numbers
+2. Route variant value will never be null, instead it will be "UNKNOWN"
+3. Logic for the derived field "Status" is as follows
+    * When deviationFromTimetable is null then Status is "Unknown" [color code "blueviolet"]
+    * Else When deviationFromTimetable is negative then Status is "Early" [color code "blue"]
+    * Else When deviationFromTimetable is between 0 and 300 then Status is "On Time" [color code "green"]
+    * Else When deviationFromTimetable is above 300 then Status is "Late" [color code "red"]
+4. The application is compatible with chrome. Support for other browsers is not guaranteed.
